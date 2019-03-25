@@ -1,0 +1,40 @@
+{
+    "name": "hcivelek/laravel-categorizable",
+    "description": "It adds categorizable ability to any model",
+    "license": "license",
+    "authors": [{
+        "name": "Hasan Civelek",
+        "email": "hcivelek@kuzen.net"
+    }],
+    "homepage": "https://github.com/hcivelek/categorizable",
+    "keywords": ["Laravel", "Categorizable"],
+    "require": {
+        "illuminate/support": "~5"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "~7.0",
+        "mockery/mockery": "^1.1",
+        "orchestra/testbench": "~3.0",
+        "sempro/phpunit-pretty-print": "^1.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "hcivelek\\Categorizable\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "hcivelek\\Categorizable\\Tests\\": "tests"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "hcivelek\\Categorizable\\ServiceProvider"
+            ],
+            "aliases": {
+                "Categorizable": "hcivelek\\Categorizable\\Facade"
+            }
+        }
+    }
+}
