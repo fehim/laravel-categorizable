@@ -1,7 +1,7 @@
 {
     "name": "hcivelek/laravel-categorizable",
     "description": "It adds categorizable ability to any model",
-    "license": "license",
+    "license": "MIT",
     "authors": [{
         "name": "Hasan Civelek",
         "email": "hcivelek@kuzen.net"
