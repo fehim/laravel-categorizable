@@ -52,8 +52,5 @@
     @endif
 
 </div>
- 
-
-<script type="text/javascript">
-</script>
+  
 @stop

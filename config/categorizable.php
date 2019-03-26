@@ -2,5 +2,5 @@
 
 return [
     'name' => 'Categories',
-    'layout' => 'layouts.app'
+    'layout' => 'layouts.master'
 ];

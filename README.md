@@ -11,6 +11,8 @@ Via Composer
 
 ``` bash
 $ composer require hcivelek/laravel-categorizable
+$ php artisan migrate
+$ php artisan vendor:publish --provider="hcivelek\Categorizable\ServiceProvider"
 ```
 
 ## Usage
