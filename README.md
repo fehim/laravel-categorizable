@@ -17,15 +17,7 @@ $ composer require hcivelek/categorizable
 
 ## Usage
 
-## Change log
-
-Please see the [changelog](changelog.md) for more information on what has changed recently.
-
-## Testing
-
-``` bash
-$ composer test
-```
+Layouts must have @yield("header") and @yield("script") definition.
 
 ## Contributing
 
@@ -40,18 +32,12 @@ If you discover any security related issues, please email hcivelek@kuzen.net ins
 - [Hasan Civelek][link-author]
 - [All Contributors][link-contributors]
 
-## License
-
-license. Please see the [license file](license.md) for more information.
 
 [ico-version]: https://img.shields.io/packagist/v/hcivelek/categorizable.svg?style=flat-square
 [ico-downloads]: https://img.shields.io/packagist/dt/hcivelek/categorizable.svg?style=flat-square
-[ico-travis]: https://img.shields.io/travis/hcivelek/categorizable/master.svg?style=flat-square
-[ico-styleci]: https://styleci.io/repos/12345678/shield
+
 
 [link-packagist]: https://packagist.org/packages/hcivelek/categorizable
 [link-downloads]: https://packagist.org/packages/hcivelek/categorizable
-[link-travis]: https://travis-ci.org/hcivelek/categorizable
-[link-styleci]: https://styleci.io/repos/12345678
 [link-author]: https://github.com/hcivelek
 [link-contributors]: ../../contributors
