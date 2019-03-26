@@ -70,7 +70,7 @@ class ServiceProvider extends \Illuminate\Support\ServiceProvider
 
         // Publishing assets.
         $this->publishes([
-            __DIR__.'/public/assets' => public_path('vendor/categorizable'),
+            __DIR__.'/public' => public_path('vendor/categorizable'),
         ], 'categorizable.assets');
         
 
