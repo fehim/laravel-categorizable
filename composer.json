@@ -6,7 +6,7 @@
         "name": "Hasan Civelek",
         "email": "hcivelek@kuzen.net"
     }],
-    "homepage": "https://github.com/hcivelek/categorizable",
+    "homepage": "https://github.com/hcivelek/laravel-categorizable",
     "keywords": ["Laravel", "Categorizable"],
     "require": {
         "illuminate/support": "~5"
