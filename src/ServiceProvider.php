@@ -16,6 +16,9 @@ class ServiceProvider extends \Illuminate\Support\ServiceProvider
         $this->loadMigrationsFrom(__DIR__.'/Database/migrations');
         $this->loadRoutesFrom(__DIR__.'/routes.php');
 
+        //register our helpers
+        $this->registerHelpers();
+
         // Publishing is only necessary when using the CLI.
         if ($this->app->runningInConsole()) {
             $this->bootForConsole();
@@ -64,10 +67,12 @@ class ServiceProvider extends \Illuminate\Support\ServiceProvider
             __DIR__.'/Resources/views' => base_path('resources/views/vendor/categorizable'),
         ], 'categorizable.views');
 
+
         // Publishing assets.
         $this->publishes([
-            __DIR__.'/Resources/assets' => public_path('vendor/categorizable'),
-        ], 'categorizable.views');
+            __DIR__.'/public/assets' => public_path('vendor/categorizable'),
+        ], 'categorizable.assets');
+        
 
         // Publishing the translation files.
         /*$this->publishes([
@@ -77,4 +82,15 @@ class ServiceProvider extends \Illuminate\Support\ServiceProvider
         // Registering package commands.
         // $this->commands([]);
     }
+
+    /**
+     * Register helpers file
+     */
+    public function registerHelpers()
+    {
+        if (file_exists($file = __DIR__.'/Helpers.php'))
+        { 
+            require $file;
+        } 
+    }      
 }

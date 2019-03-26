@@ -1,9 +1,5 @@
 @extends(config('categorizable.layout'))
 
-@section('header')
-  <link rel="stylesheet" href="{{ asset('css/categories.css') }}">
-@stop
-
 @section('content')
 
 <div class="container">
@@ -56,14 +52,7 @@
     @endif
 
 </div>
-
-@stop
-
-
-
-@section("script")
-
-<script src="{{  asset('js/categories.js')  }}"></script>
+ 
 
 <script type="text/javascript">
   $(function () {
