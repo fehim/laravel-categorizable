@@ -2,5 +2,5 @@
 
 return [
     'name' => 'Categories',
-    'layout' => 'layouts.master'
+    'layout' => 'categorizable::layouts.master'
 ];

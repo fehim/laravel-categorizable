@@ -88,7 +88,7 @@ class ServiceProvider extends \Illuminate\Support\ServiceProvider
      */
     public function registerHelpers()
     {
-        if (file_exists($file = __DIR__.'/Helpers.php'))
+        if (file_exists($file = __DIR__.'/Helper.php'))
         { 
             require $file;
         } 
