@@ -61,12 +61,12 @@ class ServiceProvider extends \Illuminate\Support\ServiceProvider
 
         // Publishing the views.
         $this->publishes([
-            __DIR__.'/Resources/views' => base_path('resources/views/vendor/hcivelek'),
+            __DIR__.'/Resources/views' => base_path('resources/views/vendor/categorizable'),
         ], 'categorizable.views');
 
         // Publishing assets.
         $this->publishes([
-            __DIR__.'/Resources/assets' => public_path('vendor/hcivelek'),
+            __DIR__.'/Resources/assets' => public_path('vendor/categorizable'),
         ], 'categorizable.views');
 
         // Publishing the translation files.
