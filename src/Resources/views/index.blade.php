@@ -4,7 +4,7 @@
 
 <div class="container">
     <h1 class="float-left">{{config('categories.name')}}</h1>
-    <button class="create-category float-right btn btn-dark">Create a category</button>
+    <button class="create-category float-right btn btn-dark" data-route="{{route('category.store')}}">Create a category</button>
     <div class="clearfix"></div>
 
     <form class="form-inline" method="get" action="{{route('category.index')}}">  
@@ -31,12 +31,12 @@
         @foreach($categories as $category)
           <tr>
             <td> 
-            <a class="edit-category" href="#" data-href="{{route('category.update',$category)}}" data-name="{{$category->name}}"><span id="category_name_{{$category->id}}">{{$category->name}}</span></a>                
+            <a class="edit-category" href="#" data-route="{{route('category.update',$category)}}" data-name="{{$category->name}}"><span id="category_name_{{$category->id}}">{{$category->name}}</span></a>                
             </td> 
             <td class="text-nowrap">{{isset($category->created_at) ? $category->created_at->format("M d, Y") : ''}}</td>
             <td class="text-nowrap">{{isset($category->updated_at) ? $category->updated_at->format("M d, Y") : ''}}</td>
             <td >
-                <a data-href="{{route('category.destroy', $category)}}" class="delete-category text text-danger" data-toggle="confirmation" data-title="Are you sure to delete this category completely?"><i class="fa fa-times"></i></a>
+                <a data-route="{{route('category.destroy', $category)}}" class="delete-category text text-danger" data-toggle="confirmation" data-title="Are you sure to delete this category completely?"><i class="fa fa-times"></i></a>
             </td>
           </tr>
         @endforeach
@@ -55,69 +55,5 @@
  
 
 <script type="text/javascript">
-  $(function () {
- 
-    $("button.create-category").click(function () {
-
-      alertify.prompt("Category","Name", '',
-        function(evt, value ){
-
-          axios.post('{{route('category.store')}}',{
-            name:value
-          })
-          .then(function (response) { 
-            location.reload()
-          })
-          .catch(function (error) {
-            alertify.alert(error.response.data.message)
-          });          
-
-        },
-        function(){ 
-      });
-
-    });
-
-    $("a.edit-category").click(function () {
-        var url  = $(this).data("href");
-        var value = $(this).data("name");
-
-        alertify.prompt("Category","Name", value,
-            function(evt, value ){
-
-                axios.put(url,{
-                    name:value
-                })
-                .then(function (response) {  
-                    $("#category_name_"+response.data.category.id).html(response.data.category.name)
-                })
-                .catch(function (error) {  
-                    alertify.alert('Category',error.response.data.message)
-                });          
-
-        },
-        function(){ 
-        });
-    });    
-
-    $('[data-toggle=confirmation]').confirmation({
-      rootSelector: '[data-toggle=confirmation]',
-      // other options
-    });     
-
-    $("a.delete-category").click(function () {
-
-      axios.delete($(this).data("href"))
-      .then(function (response) {
-        location.reload()
-      })
-      .catch(function (error) {
-        alertify.alert(error.message)
-      });
-
-    });
-
-  });
-
 </script>
 @stop

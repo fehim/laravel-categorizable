@@ -7,4 +7,6 @@ try {
     require('bootstrap-confirmation2');
     window.alertify = require('alertifyjs');
 
+    require('./categorizable.js')
+
 } catch (e) {}
