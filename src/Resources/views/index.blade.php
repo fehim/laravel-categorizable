@@ -11,7 +11,7 @@
     <button class="create-category float-right btn btn-dark">Create a category</button>
     <div class="clearfix"></div>
 
-    <form class="form-inline" method="get" action="{{route('categories.index')}}">  
+    <form class="form-inline" method="get" action="{{route('category.index')}}">  
       <div class="form-group mb-2">  
         <input type="text" name="q" class="form-control" placeholder="Search" value="{{$q}}">
       </div>
